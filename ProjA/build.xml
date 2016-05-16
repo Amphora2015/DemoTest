@@ -3,6 +3,7 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
       <echo message="Added a new line"/>
+      <echo message="Added a second line"/>
    </target> 
    
    <target name="all">
