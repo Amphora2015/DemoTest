@@ -1,0 +1,16 @@
+DB#ADCM-268 : DB REQUEST- Alter sp PKG_TRADE_SUMMARY$P_UPDATE_TRADE_SUMMARY_CPTY_TRADE_ID as attached file.
+
+Project : Amphora Dev Confirmation Manager
+
+Desc :
+
+DB REQUEST- Alter sp PKG_TRADE_SUMMARY$P_UPDATE_TRADE_SUMMARY_CPTY_TRADE_ID as attached file.
+
+This fixes the @p_cpty_trade_id length to same as DB column cpty_trade_id of TRADE_SUMMARY. 
+
+
+--- Naveen Gottam
+***************************************************************************
+DB Changes:
+
+	Updated SPROC 'PKG_TRADE_SUMMARY$P_UPDATE_TRADE_SUMMARY_CPTY_TRADE_ID' with @p_cpty_trade_id	varchar(50)
