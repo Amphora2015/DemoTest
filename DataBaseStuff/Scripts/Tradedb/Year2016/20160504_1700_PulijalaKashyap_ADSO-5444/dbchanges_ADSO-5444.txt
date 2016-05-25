@@ -1,0 +1,27 @@
+Issue #ADSO-5444 - DB Request for ADSO-5372
+
+Project : Amphora Dev Symphony Oil
+
+Description :
+
+1.	Add entries in the new_num table for the tables “riskmgr_win_def and riskmgr_win_pivot_def”
+2.	Add “asof_date” (date type field) column in the riskmgr_win_pivot_def table
+
+
+-- Pulijala Kashyap
+
+*************************************************************************
+DB CHANGES:      
+
+1. Added new column 'asof_date' on 'riskmgr_win_pivot_def' and 'aud_riskmgr_win_pivot_def' table.
+
+   Updated below objects to reflect the new column changes:
+
+   Triggers: 
+			riskmgr_win_pivot_def_instrg
+	     	riskmgr_win_pivot_def_updtrg
+			riskmgr_win_pivot_def_deltrg
+
+2. Added ref data into new_num table.
+
+

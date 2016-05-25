@@ -1,0 +1,36 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF OBJECT_ID('dbo.rabbitmq_security_auth','U') IS NOT NULL
+EXEC ('DROP TABLE dbo.rabbitmq_security_auth')
+GO
+
+CREATE TABLE [dbo].[rabbitmq_security_auth](
+	[ad_class] [varchar](200) NULL,
+	[ad_dn] [varchar](200) NULL,
+	[ad_name] [varchar](200) NULL,
+	[ad_uid] [varchar](100) NULL,
+	[administrator] [bit] NULL,
+	[allowread] [bit] NULL,
+	[allowwrite] [bit] NULL,
+	[configure] [bit] NULL,
+	[exhange] [bit] NULL,
+	[management] [bit] NULL,
+	[queue] [bit] NULL,
+	[rabbitmq_security_auth_id] [int] IDENTITY(1,1) NOT NULL,
+	[userName] [varchar](200) NULL,
+	[vHost] [varchar](1) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[rabbitmq_security_auth_id] ASC
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
+)ON [PRIMARY]
+GO
+
+PRINT 'TABLE rabbitmq_security_auth WAS CREATED WITH SUCCESS!!! '
+GO
+
+

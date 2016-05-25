@@ -1,0 +1,34 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+if object_id('dbo.riskmgr_win_def', 'U') is not null
+   drop table dbo.riskmgr_win_def
+go
+
+CREATE TABLE dbo.riskmgr_win_def
+(
+    [description] [varchar](40) NOT NULL,
+	[is_public] [char](1) NULL,
+	[owner_name] [varchar](15) NOT NULL,
+	[win_id] [int] NOT NULL,
+	[window_title] [varchar](30) NOT NULL,
+	[trans_id] [varchar](100) NOT NULL,
+	[lower_split_pos] [int] NOT NULL DEFAULT ((-1)),
+	[port_split_pos] [int] NOT NULL DEFAULT ((-1)),
+	[pnl_split_pos] [int] NOT NULL DEFAULT ((-1)),
+	[window_frame] [varchar](255) NOT NULL DEFAULT (''),
+	[port_path] [varchar](255) NOT NULL DEFAULT ('')
+) 
+go
+
+ALTER TABLE dbo.riskmgr_win_def
+   ADD CONSTRAINT PK_riskmgr_win_def PRIMARY KEY CLUSTERED (win_id)   
+go
+
+IF OBJECT_ID('dbo.riskmgr_win_def') IS NOT NULL
+   PRINT '<<< CREATED TABLE dbo.riskmgr_win_def >>>'
+ELSE
+   PRINT '<<< FAILED CREATING TABLE dbo.riskmgr_win_def >>>'
+go

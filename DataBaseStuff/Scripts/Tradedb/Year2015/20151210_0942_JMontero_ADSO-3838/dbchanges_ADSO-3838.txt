@@ -1,0 +1,7 @@
+Issue #ADSO-3838  
+Author: Javier Montero 
+Request by: Melvin Ramos
+
+Changes:
+For the Risk Manager software is required build a env on India Server because it is necessary recreate some tables like topic_portfolio_mappings in the India Env.
+

@@ -1,0 +1,11 @@
+print '==> Adding RI constraint riskmgr_win_pivot_def_fk1 ...'
+go
+IF NOT EXISTS(SELECT 1 FROM sysreferences
+			  WHERE constid = OBJECT_ID('riskmgr_win_pivot_def_fk1')
+			  AND fkeyid = OBJECT_ID('riskmgr_win_pivot_def')
+			  AND rkeyid = OBJECT_ID('uom')	)
+	ALTER TABLE dbo.riskmgr_win_pivot_def
+		ADD CONSTRAINT riskmgr_win_pivot_def_fk1 FOREIGN KEY (uom)
+			REFERENCES dbo.uom (uom_code);			
+			
+GO

@@ -1,0 +1,10 @@
+Issue #ADSO-2713  Author: Javier Montero Request by: Rik Cousen
+
+The table riskmgr_win_pivot_def require the next fields:   
+	1. uom_code char(4) not null 
+	   // primary key of the UOM table. RiskMgr will convert contents of this PivotGrid in these units.
+	2. num_of_decimals tinyint default 2 not null 
+	   // number of decimal places to show within the PivotGrid
+	3. show_future_equiv char(1) default 'N' not null 
+	   // possible values: 'Y','N'. User wishes to see future-equivalents, in the PivotGrid.
+          

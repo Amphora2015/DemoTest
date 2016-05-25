@@ -1,0 +1,6 @@
+Issue #ADSO-2977  
+Author: Javier Montero Request by: Rik Cousen
+
+The table riskmgr_win_pivot_def require the next:   
+	1. Alter the field pivot_layout as null 
+	   

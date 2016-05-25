@@ -1,0 +1,38 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+if object_id('dbo.riskmgr_win_pivot_def', 'U') is not null
+   drop table dbo.riskmgr_win_pivot_def
+go
+
+CREATE TABLE dbo.riskmgr_win_pivot_def
+(
+    [owner_win_id] [int] NOT NULL,
+	[piv_def_id] [int] NOT NULL,
+	[tab_index] [int] NOT NULL,
+	[tab_name] [varchar](20) NOT NULL,
+	[trans_id] [int] NOT NULL,
+	[uom] [char](4) NOT NULL,
+	[num_of_decimals] [tinyint] NOT NULL,
+	[show_future_equiv] [char](1) NOT NULL DEFAULT ('N') CHECK (show_future_equiv = 'N' or show_future_equiv = 'n' OR show_future_equiv = 'Y' OR show_future_equiv = 'y'), 
+	[pivot_layout] [text] NULL,
+	lower_split_pos int NOT NULL DEFAULT -1,
+	port_split_pos int NOT NULL DEFAULT -1,
+	pnl_split_pos int NOT NULL DEFAULT -1,
+	window_frame varchar(255) NOT NULL DEFAULT '',
+	port_path varchar(255) NOT NULL DEFAULT ''	
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+go
+
+IF OBJECT_ID('dbo.riskmgr_win_pivot_def') IS NOT NULL
+ALTER TABLE dbo.riskmgr_win_pivot_def
+   ADD CONSTRAINT PK_piv_def_id PRIMARY KEY CLUSTERED (piv_def_id)   
+go
+
+IF OBJECT_ID('dbo.riskmgr_win_pivot_def') IS NOT NULL
+   PRINT '<<< CREATED TABLE dbo.riskmgr_win_pivot_def >>>'
+ELSE
+   PRINT '<<< FAILED CREATING TABLE dbo.riskmgr_win_pivot_def >>>'
+go

@@ -1,0 +1,6 @@
+Issue #ADSO-2977  
+Author: Javier Montero 
+Request by: Rik Cousen
+
+Changes:
+The tables riskmgr_win_def and riskmgr_win_pivot_def requieres a Triggers to prevent unexpected changes and have a track of this changes
