@@ -5,6 +5,7 @@
    </target> 
    
    <target name="all">
+	<!-- added a line -->
       <echo message="Project ${ant.project.name}"/>
    </target>
 
