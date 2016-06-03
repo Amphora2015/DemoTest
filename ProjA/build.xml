@@ -6,6 +6,8 @@
    
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
+      <echo message="added aline"/>
+      <echo message="added second line"/>
    </target>
 
 </project>
