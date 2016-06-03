@@ -8,6 +8,7 @@
 	<!-- added a line -->
 	<!-- added another line -->
 	<!-- Just Demo -->
+	<!-- Just Demo2 -->
       <echo message="Project ${ant.project.name}"/>
    </target>
 
