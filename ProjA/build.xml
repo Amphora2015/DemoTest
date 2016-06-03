@@ -11,6 +11,7 @@
 	<!-- Just Demo2 -->
 	<!-- Test Squash 1 -->
 	<!-- Test Squash 2 -->
+	<!-- Just Demo 3 -->
       <echo message="Project ${ant.project.name}"/>
    </target>
 
