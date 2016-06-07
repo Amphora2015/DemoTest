@@ -1,0 +1,53 @@
+Issue #ADSO-5642 - 3.0 - DB Issue to not create PRICEINV task if there are no inventory in the portfolio needs pricing.
+
+Project : Amphora Dev Symphony Oil
+
+Description :
+
+GIT Repository name: ADSO-4248
+
+Please modify the “usp_get_real_port_nums” stored procedure with below change.
+
+  -- ================================  
+   -- RealPort has inventories:  
+   -- ================================  
+   if @debugonoff = 'Y'  
+   begin  
+      set @currenttime = convert(varchar, getdate(), 109)   
+      print 'DEBUG(4): START updating the flag price inventory (time is ' + @currenttime + ')'  
+   end  
+   update #port_num_pool  
+   set run_price_inventory_ind = 1  
+   where exists (select 1  
+                 from dbo.inventory inv  
+                 where inv.port_num = #port_num_pool.port_num and  
+                       inv.port_num is not null {color:red}and inv.needs_repricing='Y'{color})   
+   if @@error > 0  
+      goto endofsp1  
+  
+   if @debugonoff = 'Y'  
+   begin  
+      set @currenttime = convert(varchar, getdate(), 109)   
+      print 'DEBUG(4): STOP (time is ' + @currenttime + ')'  
+   end  
+ 
+
+-- Lakshmi Narayana Garoju
+
+********************************************************************
+DB CHANGES:
+   
+     Updated 'usp_get_real_port_nums' stored procedure.
+
+	Before Change:
+		
+		where inv.port_num = #port_num_pool.port_num and  
+        inv.port_num is not null
+					   
+	After Change:
+	
+		where inv.port_num = #port_num_pool.port_num and 
+		inv.port_num is not null and inv.needs_repricing='Y' 
+		
+
+  
