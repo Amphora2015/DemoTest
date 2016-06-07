@@ -1,0 +1,23 @@
+DB#ADSO-5741 : Merge ENIS-85 from FR9 to 3.0 release
+
+Project : Amphora Dev Symphony Oil
+
+Description :
+
+Need to merge ENIS-85 from FR9 release to 3.0 as requested and make all additional changes necessary so that this feature will work in 3.0 release.
+
+--Hung Nguyen
+
+*****************************************************
+
+DB Changes:
+
+Create\Alter below stored procedures.
+
+	fetchDeletedAllocForAllocNum,
+	fetchDeletedAllocItemsForAlloc,
+	fetchDeletedAllocItemsForTrade,
+	fetchAllocItemToAssignTrade,
+	fetchAllocationToEntityTag,
+	fetchAllocItemToEntityTag,
+	fetchActualToEntityTag.
