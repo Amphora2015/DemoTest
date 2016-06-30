@@ -4,7 +4,7 @@
 **/version.rc
 **/VERSION.RES
 *.dll
-
+ProjB\temp.properties
 #################
 #Eclipse
 #################
