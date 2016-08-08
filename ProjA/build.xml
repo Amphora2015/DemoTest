@@ -2,12 +2,19 @@
    
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
-      <echo message="Added a new line"/>
-      <echo message="Added a  line"/>
    </target> 
    
    <target name="all">
+	<!-- added a line -->
+	<!-- added another line -->
+	<!-- Just Demo -->
+	<!-- Just Demo2 -->
+	<!-- Test Squash 1 -->
+	<!-- Test Squash 2 -->
+	<!-- Just Demo 3 -->
       <echo message="Project ${ant.project.name}"/>
+      <echo message="added aline"/>
+      <echo message="added second line"/>
    </target>
 
 </project>
