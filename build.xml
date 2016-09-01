@@ -17,5 +17,8 @@
 	  <subant target="">
          <fileset dir="." includes="*/build.xml"/>
       </subant>
+	  <subant target="mallesh">
+         <fileset dir="." includes="*/build.xml"/>
+      </subant>
    </target>
 </project>
