@@ -4,6 +4,7 @@
       <echo message="Project ${ant.project.name}"/>
    </target> 
    <!-- Commented a line -->
+   <!-- Commented a line in dev branch -->
    <target name="all">
 	<!-- added a line -->
 	<!-- added another line -->
