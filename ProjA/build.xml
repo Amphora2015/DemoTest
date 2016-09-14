@@ -3,7 +3,7 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
    </target> 
-   
+   <!-- Commented a line -->
    <target name="all">
 	<!-- added a line -->
 	<!-- added another line -->
