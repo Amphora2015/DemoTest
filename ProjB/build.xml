@@ -17,4 +17,6 @@
       <echo message="Project ${ant.project.name}"/>
    </target>
    AMEND 2
+   
+   AMEND 3
  </project>
