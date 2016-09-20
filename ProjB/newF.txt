@@ -14,3 +14,5 @@ testing new line
 checking for new automerge update
 
 checking2 for new automerge update
+
+checking3 for new automerge update
