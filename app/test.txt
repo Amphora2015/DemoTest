@@ -1,3 +1,5 @@
 test file
 
 Testing for automerge
+
+Testing for automerge1
